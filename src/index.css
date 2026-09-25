@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink-900 text-ink-50 font-sans antialiased;
+    background-image:
+      radial-gradient(circle at 15% 20%, rgba(212, 175, 55, 0.06) 0%, transparent 40%),
+      radial-gradient(circle at 85% 80%, rgba(34, 211, 238, 0.04) 0%, transparent 40%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-ink-700/60 backdrop-blur-xl border border-ink-500/50 rounded-2xl;
+  }
+  .glass-card-hover {
+    @apply transition-all duration-300 hover:border-gold-300/40 hover:bg-ink-600/60;
+  }
+  .gold-text {
+    @apply bg-gradient-to-r from-gold-200 via-gold-300 to-gold-400 bg-clip-text text-transparent;
+  }
+  .gold-border {
+    @apply border border-gold-300/30;
+  }
+  .stat-value {
+    @apply font-mono font-semibold tabular-nums;
+  }
+  .shimmer-bg {
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.08), transparent);
+    background-size: 200% 100%;
+    @apply animate-shimmer;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-ink-400 rounded-full;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-gold-300/50;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
